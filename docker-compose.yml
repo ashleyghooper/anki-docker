@@ -1,0 +1,14 @@
+services:
+  anki:
+    build:
+      context: .
+      args:
+        - LANG=$LANG
+    environment:
+      - DISPLAY=$DISPLAY
+    network_mode: host
+    volumes:
+      - ./config:/home/anki-user/.config
+      - $HOME/Anki:/home/anki-user/.local/share/Anki
+      - $HOME/Anki2:/home/anki-user/.local/share/Anki2
+      - $HOME/.Xauthority:/home/anki-user/.Xauthority
