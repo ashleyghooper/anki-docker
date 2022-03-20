@@ -4,10 +4,13 @@ services:
       context: .
       args:
         - LANG=$LANG
+    # entrypoint: ["tail", "-f", "/dev/null"]
+    # entrypoint: ["anki", "--safemode"]
     environment:
       - DISPLAY=$DISPLAY
     network_mode: host
     volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
       - ./config:/home/anki-user/.config
       - $HOME/Anki:/home/anki-user/.local/share/Anki
       - $HOME/Anki2:/home/anki-user/.local/share/Anki2
