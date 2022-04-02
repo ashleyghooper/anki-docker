@@ -14,4 +14,5 @@ services:
       - ./config:/home/anki-user/.config
       - $HOME/Anki:/home/anki-user/.local/share/Anki
       - $HOME/Anki2:/home/anki-user/.local/share/Anki2
+      - $HOME/Pictures:/home/anki-user/Pictures
       - $HOME/.Xauthority:/home/anki-user/.Xauthority
